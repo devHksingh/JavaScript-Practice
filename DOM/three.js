@@ -15,9 +15,6 @@ function addOptiLanguage(language){
 }
 
 
-
-
-
 addLanguage('python')
 addLanguage('java')
 
@@ -31,3 +28,15 @@ const secondLang = document.querySelector('li:nth-child(2)');
 const newLiEl = document.createElement('li')
 newLiEl.textContent = "Mojo"
 secondLang.replaceWith(newLiEl)
+
+// Edit
+
+const firstLang = document.querySelector('li:first-child')
+
+firstLang.outerHTML = '<li>Typescript</li>'
+
+
+// remove
+
+const lastLang = document.querySelector('li:last-child')
+lastLang.remove()
