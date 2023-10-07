@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<style>
+    .display-none{
+        display: none;
+    }
+    .circle{
+        padding: 0.1rem;
+        width: 0.2em;
+        height: 0.2em;
+        border-radius: 100%;
+        background-color: aquamarine;
+        position: absolute;
+        /* transform: translate(-50%, -50%); */
+    }
+    .div-box{
+        width: 50vw;
+        height: 50vh;
+        background-color: olivedrab;
+        position: relative;
+    }
+</style>
+<body style="background-color: #414141; color: aliceblue;">
+    <div class="container">
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            <li><div style="outline: #212121 solid 1px; padding: 1em; margin: 1rem;" id="box"><p >
+                Mouse over this box to display the horizontal and vertical coordinates of the mouse pointer
+            </p></div></li>
+            <li id="coordinates" style="color: antiquewhite;"><p id="maouse-event"> <span id="x-coordinate"></span>  Y coordinates: <span id="y-coordinate"></span></p></li>
+        </ul>
+
+
+    </div>
+
+    <div style="border: 1px solid black;padding:8px" id="trackBox">
+
+        <p>Mouse over this box to display the horizontal and vertical coordinates of the mouse pointer.</p>
+    </div>
+
+    <div class="div-box" id="div-box" style="margin: 2em;">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facere ut minima rem nemo architecto nobis porro repudiandae exercitationem illum commodi dolore error, eos obcaecati vel accusantium nisi reiciendis harum.</p> -->
+    </div>
+
+    <script src="./event.js"></script>
+</body>
+</html>
