@@ -8,7 +8,14 @@ const liMouseEvent = document.querySelector('#maouse-event')
 
 const divBox= document.querySelector('#div-box')
 
+ul.addEventListener('click',function(e){
+    console.log(`clicked inside ul`);
+},false)
 
+document.querySelector('#owl').addEventListener('click',function(e){
+    console.log(`owl clicked!`);
+    e.stopPropagation()
+},false)
 
 /*
 Task1 : Mouse over this box to display the horizontal and vertical coordinates of the mouse pointer
@@ -83,3 +90,30 @@ This calculation allows us to position the blue circle precisely at the point wh
 rather than using the absolute X-coordinate of the entire viewport. It's a common technique for handling events within a specific element's context.
 
 */ 
+
+
+// Task3 : hide <li> element using Event: target property
+/*
+The read-only target property of the Event interface is a reference to
+the object onto which the event was dispatched. It is different from 
+Event.currentTarget when the event handler is called during the bubbling or capturing phase of the event.
+*/
+
+ul.addEventListener('click',function(event){
+    // event.target.
+    // console.log(ul)
+    console.log(event.target.tagName);
+    if (event.target.tagName === "IMG"){
+        console.log(event.target);
+        event.target.style.visibility="hidden";
+        
+        (event.target.parentNode).remove();
+    }else if(event.target.tagName ==='A'){
+        event.preventDefault()
+        console.log('google link clicked!');
+        (event.target.parentNode).remove();
+    }
+
+},false)
+
+
