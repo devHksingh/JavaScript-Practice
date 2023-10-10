@@ -3,40 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
-<body>
-    <body>
-        <div class="board">
-          <form id="todo-form">
-            <input type="text" placeholder="New TODO..." id="todo-input" />
-            <button type="submit">Add +</button>
-          </form>
-    
-          <div class="lanes">
+<body class="bg-image">
+
+
+
+  <nav>
+        <form id="todo-lane">
+            <input type="text" placeholder="New todo..." class="input-feild">
+            <button type="submit" class="taskSubmit">Add +</button>
+
+        </form>
+  </nav>
+
+  <div class="bord">
+
+        
+        
+        <div class="lanes">
             <div class="swim-lane" id="todo-lane">
-              <h3 class="heading">TODO</h3>
-    
-              <p class="task" draggable="true">Get groceries</p>
-              <p class="task" draggable="true">Feed the dogs</p>
-              <p class="task" draggable="true">Mow the lawn</p>
+                <h3 class="heading">TODO</h3>
+                <p class="task" draggable="true">Get groceries</p>
+                <p class="task" draggable="true">Feed the dogs</p>
+                <p class="task" draggable="true">Mow the lawn</p>
             </div>
-    
+
             <div class="swim-lane">
-              <h3 class="heading">Doing</h3>
-    
-              <p class="task" draggable="true">Binge 80 hours of Game of Thrones</p>
+                <h3 class="heading">On Hold</h3>
+                <p class="task" draggable="true">JavaScrpit</p>
+                <p class="task" draggable="true">React</p>
+                
             </div>
-    
+
             <div class="swim-lane">
-              <h3 class="heading">Done</h3>
-    
-              <p class="task" draggable="true">
-                Watch video of a man raising a grocery store lobster as a pet
-              </p>
+                <h3 class="heading">Needs Review</h3>
+                <p class="task" draggable="true">Event</p>
+                <p class="task" draggable="true">DOM</p>
+
             </div>
+
+            <div class="swim-lane">
+                <h3 class="heading">Approved / Done</h3>
+                <p class="task" draggable="true">API</p>
+                
+            </div>
+        </div>
+        
+
+  </div>
+
+  <footer>
+        <div class="summary">
+            <h1 class="summary-heading">Summary</h1>
+            <h3 class="result">total Task : </h3><span>5</span><br>
+            <h3 class="result">On Hold : </h3><span>5</span><br>
+            <h3 class="result">In progress : </h3><span>5</span>
+
+        </div>
+  </footer>
+
+      <!-- <div class="board">
+        <form id="todo-form">
+          <input type="text" placeholder="New TODO..." id="todo-input" />
+          <button type="submit">Add +</button>
+        </form>
+  
+        <div class="lanes">
+          <div class="swim-lane" id="todo-lane">
+            <h3 class="heading">TODO</h3>
+  
+            <p class="task" draggable="true">Get groceries</p>
+            <p class="task" draggable="true">Feed the dogs</p>
+            <p class="task" draggable="true">Mow the lawn</p>
+          </div>
+  
+          <div class="swim-lane">
+            <h3 class="heading">Doing</h3>
+  
+            <p class="task" draggable="true">Binge 80 hours of Game of Thrones</p>
+          </div>
+  
+          <div class="swim-lane">
+            <h3 class="heading">Done</h3>
+  
+            <p class="task" draggable="true">
+              Watch video of a man raising a grocery store lobster as a pet
+            </p>
           </div>
         </div>
-      </body>
+      </div> -->
+      
 </body>
 </html>

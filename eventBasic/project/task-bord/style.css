@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #212121;
+    color: antiquewhite;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    min-height: 100vh;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+    --bg-image:url(https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    --bg-image-opacity:.45;
+
+    /* background-image: url(https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80); */
+    
+    position: relative;
+    isolation: isolate;     
+}
+
+.bg-image::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+nav{
+    /* width: 100%; */
+    /* border: 2px solid red; */
+    /* margin: 1em; */
+    padding: 1em;
+    /* text-align: center; */
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* #todo-lane{
+    display: flex;
+} */
+
+.input-feild{
+    /* text-align: center; */
+    font-size: 1.275rem;
+    border-radius: 2rem;
+    padding: 0.8rem 3rem;
+    background-color:rgba(11, 11, 12, 0.918);
+    gap: 1em;
+    border: #212121;
+    color: antiquewhite;
+    outline: none;
+    
+}
+
+.input-feild:focus
+.input-feild:active{
+    /* border: #212121; */
+    border: #212121;
+}
+.taskSubmit{
+    margin-left: 1em;
+    padding: 0.4rem 1.25rem;
+    background-color: royalblue;
+    border: rgba(11, 11, 12, 0.918) 1px solid;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    
+    
+}
+.taskSubmit:hover{
+    color: #fff;
+    background-color: green;
+}
+.flex{
+    display: flex;
+    gap: 1rem;
+}
+
+.container{
+    /* border: 1px solid red; */
+    /* padding: 0.5em; */
+    /* margin: 0 auto; */
+    /* max-width: 1000em; */
+    padding: 1rem;
+    text-align: center;
+    
+}
+
+.task-list{
+    margin: 0 auto;
+    border: 1px solid aquamarine;
+    /* margin-top: 1em;
+    margin-bottom: 1em; */
+    /* width: 100%; */
+    margin: 2em 0;
+}
+
+.bord{
+    /* outline: 1px solid saddlebrown; */
+    /* width: 100%; */
+  /* height: 100vh; */
+  /* overflow: scroll; */
+    margin-top: 2em;
+    /* max-height: 100vh; */
+    /* margin: 2rem auto; */
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    /* flex-direction: row-reverse; */
+
+}
+
+.swim-lane{
+ display: inline-flex;
+ flex-direction: column;
+ gap: 1rem;
+ margin-right: 1rem;
+ /* background-color: #fff; */
+ color: #212121;
+ padding: 2rem;
+ border-radius: 20px;
+ background: #f4f4f4;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.task {
+    background: white;
+    color: black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  
+    padding: 12px;
+    border-radius: 4px;
+  
+    font-size: 16px;
+    cursor: move;
+  }
+  .is-dragging {
+    /* scale: 1.05; */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    background: rgb(50, 50, 50);
+    color: white;
+  }
+
+  .heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-bottom: #212121 solid 1px;
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+
+.summary{
+    /* border: 1px solid red; */
+    text-align: center;
+    margin: 2em auto;
+    padding: 1rem;
+    background-color: #212121;
+    opacity: 0.85;
+    border-radius: 20px;
+    
+}
+
+.summary-heading{
+    /* margin-top: 2em; */
+    color: #f4f4f4;
+    margin-bottom: 0.5em;
+    /* margin: 4em; */
+    /* display: inline; */
+
+}
+
+.result{
+    display: inline-block;
+    gap: 16em;
+    margin-bottom: 1.0rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
