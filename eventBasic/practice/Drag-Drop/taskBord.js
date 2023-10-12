@@ -1,0 +1,6 @@
+const inputFeild = document.querySelector('#inputFeild')
+const submitBtn = document.querySelector('#subt')
+const todoList = document.querySelector('#todo-list')
+const holdList = document.querySelector('#hold-list')
+const progressList = document.querySelector('#progress-list')
+const reviewList = document.querySelector('#review-list')
