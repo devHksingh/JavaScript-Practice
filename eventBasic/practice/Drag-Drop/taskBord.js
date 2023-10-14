@@ -8,7 +8,7 @@ const droppables = document.querySelectorAll(".swim-lane");
 
 
 
-let beingDragged 
+// let beingDragged 
 
 
 // add user task to todo lane
@@ -20,6 +20,7 @@ form.addEventListener('submit',addUserTask,false)
 
 function addUserTask(e){
     e.preventDefault()
+    
     const newTask = document.createElement('p')
     newTask.classList.add('task')
     newTask.setAttribute('draggable',true)
@@ -35,6 +36,7 @@ function addUserTask(e){
         newTask.classList.remove('is-dragging')
     },false)
     inputFeild.value = ""
+    count()
 }
 
 
@@ -45,70 +47,92 @@ draggables.forEach((task)=>{
     task.addEventListener('dragend',()=>{
         task.classList.remove("is-dragging")
     },false)
+    
 
 })
 
 droppables.forEach((zone)=>{
     zone.addEventListener('dragover',(e)=>{
         e.preventDefault() // prevent default behaviour of dragover
+
+        const bottomTask = insertAboveTask(zone,e.clientY)
+        let currentTask = document.querySelector('.is-dragging')
+
+        if (!bottomTask) {
+            zone.appendChild(currentTask)
+        } else {
+            zone.insertBefore(currentTask,bottomTask)
+        }
+        count()
+        
+        // console.log(task)
+
+        // zone.appendChild(task)
     },false)
 })
 
 
-// const form = document.querySelector('#todo-form')
-// const addBtn = document.querySelector('.taskSubmit')
-// const inputFeild = document.querySelector('.input-feild')
-// const todoLane = document.querySelector('#todo-lane')
+function insertAboveTask(container,y){
+
+    const element = container.querySelectorAll('.task:not(.is-dragging)')
+    // console.log(element)
+    let closestTask = null;
+    let closestOffset = Number.NEGATIVE_INFINITY
+
+    element.forEach((task)=>{
+            const { top } = task.getBoundingClientRect()
+
+            // console.log(top)
+
+            const offset = y - top;
+
+            if (offset < 0 && offset > closestOffset) {
+                
+                closestOffset = offset
+                closestTask = task
+            }
+    })
+    return closestTask
+
+}
+
+// updateing summary section
+
+const totalTask = document.querySelector('.total-task')
+const holdEl = document.querySelector('.task-hold')
+const progressEl = document.querySelector('.task-progress')
+const doneEl = document.querySelector('.task-done')
 
 
 
 
-// form.addEventListener('submit',function(e){
-//     e.preventDefault()
-//     let inputValue = inputFeild.value;
+// console.log(droppables)
 
-//     if (! inputValue) return
 
-//     const newTask = document.createElement('p')
-//     newTask.classList.add("task")
-//     newTask.setAttribute('dragable',true)
-//     newTask.innerText= inputValue
+count()
 
-//     todoLane.appendChild(newTask)
-
-//     console.log(inputValue)
-//     console.log(newTask)
-//     console.log(todoLane)
-
-//     newTask.addEventListener("dragstart", function dragStart()  {
-//         newTask.classList.add("is-dragging");
-//       });
+function count() {
+    let total =0
+    let hold =0
+    let progress =0
+    let done =0
+    let ele =[]
+    droppables.forEach((task)=>{
     
-//       newTask.addEventListener("dragend", function dragEnd() {
-//         newTask.classList.remove("is-dragging");
-//       });
+        ele.push(task.children.length -1)
+        total = total +(task.children.length -1)
+        // console.log(task.children.length -1)
+    })
+    // console.log(ele);
+    hold = ele[1]
+    progress = ele[2]
+    done = ele[3]
     
-//       todoLane.appendChild(newTask);
     
-//       inputValue.value = "";
-
-
-// },false)
-
-// addBtn.addEventListener('click',addTodo,false);
-// todoLane.addEventListener('click',todoList,false)
-
-
-
-
-
-
-
-// function addTodo(e){
-//     console.log(inputFeild.value)
-    
-// }
-
-// function todoList(e){
-//     console.log(e)
-// }
+    console.log(` hold ${hold} prog ${progress} done ${done} total ${total}`);
+    totalTask.textContent= total
+    holdEl.textContent=`${hold}`
+    progressEl.textContent=`${progress}`
+    doneEl.textContent=`${done}`
+    console.log(total);
+}

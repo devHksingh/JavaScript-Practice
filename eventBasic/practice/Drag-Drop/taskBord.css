@@ -188,11 +188,11 @@ nav{
 
 }
 
-.result{
+/* .result{
     display: inline-block;
     gap: 16em;
     margin-bottom: 1.0rem;
-}
+} */
 
 
 .is-dragging {
@@ -202,7 +202,17 @@ nav{
     color: white;
   }
 
+.result{
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    gap: 1rem;
+}
 
+span{
+    font-size: larger;
+    font-weight: 700;
+}
 
 
 
