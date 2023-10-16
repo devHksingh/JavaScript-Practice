@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body style="background-color: #212121; color: antiquewhite;">
+    <h1>Fun with JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+</body>
+<script>
+
+const text = "Learning setInterval()"
+
+const str = "Hello JavaScript!"
+const toPrint = function(para){
+    console.log(para , Date.now())
+}
+
+let interval
+
+
+document.querySelector('#start').addEventListener('click',function(){
+    if (!interval) {
+        interval = setInterval(toPrint,1000,str)
+    } 
+    
+},false)
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearInterval(interval)
+    console.log("stopped")
+    interval = null
+},false)
+
+
+</script>
+
+</html>
