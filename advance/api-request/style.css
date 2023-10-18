@@ -8,3 +8,23 @@ body{
 .border{
     border: 1px solid red;
 }
+.card{
+    border: 2px dotted sandybrown;
+}
+
+
+.img-container{
+    /* width: 200px; */
+    /* height: 200px; */
+    
+}
+
+.userImg{
+    max-width: 150px;
+    max-height: 150px; 
+    border-radius: 100%;
+}
+
+.user-name{
+    color: antiquewhite;
+}
