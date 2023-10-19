@@ -28,3 +28,17 @@ body{
 .user-name{
     color: antiquewhite;
 }
+.btn{
+    background-color:transparent;
+    border: none;
+    margin: 0;
+}
+.test{
+    /* color: blue; */
+    /* background-color: aqua; */
+}
+.btn:active,
+.btn:hover,
+.btn:focus{
+    font-size: 2rem;
+}
